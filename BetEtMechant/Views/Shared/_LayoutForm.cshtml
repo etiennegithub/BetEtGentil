@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "_LayoutForm";
+}
+
+
+<div class="card" >
+    <div class="card-body">
+        <h5 class="card-title">@RenderSection("SectionTitle", true)</h5>
+        @RenderBody()
+    </div>
+</div>
+
+@section SectionScripts{
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("SectionScripts", false)
+
+}
+

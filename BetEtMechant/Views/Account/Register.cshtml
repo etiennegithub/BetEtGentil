@@ -1,0 +1,55 @@
+﻿@model RegisterViewModel
+@{
+    Layout = "_LayoutForm";
+    ViewData["Title"] = "Register";
+}
+
+<form method="post" asp-action="Register" asp-controller="Account" novalidate>
+    @*<div asp-validation-summary="All"></div>*@
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control">
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmedPassword"></label>
+        <input asp-for="ConfirmedPassword" class="form-control">
+        <span class="text-danger" asp-validation-for="ConfirmedPassword"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Firstname"></label>
+        <input asp-for="Firstname" class="form-control">
+        <span class="text-danger" asp-validation-for="Firstname"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BirthDate"></label>
+        <input asp-for="BirthDate" class="form-control">
+        <span class="text-danger" asp-validation-for="BirthDate"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+</form>
+
+@section SectionTitle{
+    Nouvel utilisateur
+}
+
+
+@section SectionScripts{
+    
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BetEtMechant</name>
+    </assembly>
+    <members>
+        <member name="M:BetEtMechant.ApiControllers.ChampionshipsController.GetToto">
+            <summary>
+            Lister les championnats
+            </summary>
+            <returns>une list de Championships</returns>
+        </member>
+        <member name="M:BetEtMechant.ApiControllers.ChampionshipsController.GetChampionship(System.Int32)">
+            <summary>
+            Affiche un championnat en fonction de l ID
+            </summary>
+            <param name="id">ID recherché</param>
+            <returns>Un championnat</returns>
+        </member>
+    </members>
+</doc>

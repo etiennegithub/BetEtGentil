@@ -1,0 +1,11 @@
+﻿@if (!string.IsNullOrWhiteSpace(TempData["Message"]?.ToString()))
+{
+    var message = Newtonsoft.Json.JsonConvert.DeserializeObject<BetEtMechant.Class.FlashMessage>(TempData["Message"].ToString());
+
+
+    <div class="alert alert-@message.TypeMessage.ToString().ToLower()">
+        @message.Message
+    </div>
+
+
+}

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BetEtMechant.Models.Championship>
+
+<h2>Les championnats</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Ajouter</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr id="champ-@item.ID">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a href="" class="suppr" data-id="@item.ID"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section SectionScripts{ 
+    <script>
+        $('.suppr').click(function () {
+            var id = $(this).data("id");
+            $.ajax({
+                method: "POST",
+                url: "@Url.Action("delete")",
+                data: { id: id },
+                success: function (obj) {
+                    alert('Le championnat ' + obj.Name + 'a été supprimé.');
+                    $("#champ-" + id).fadeOut();
+                },
+                error: function (err) {
+                    alert(err.responseJSON.message);
+                    console.log(err);
+                }
+            });
+            return false;
+        });
+    </script>
+}
